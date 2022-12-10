@@ -4,7 +4,9 @@
     {
         public class Problem2: IProblem<long>
         {
-            public const long win = 6, lose = 0, draw = 3;
+            private const long Win = 6;
+            private const long Lose = 0;
+            public const long Draw = 3;
 
             public long GetPlayScore(String a)
             {
@@ -25,45 +27,45 @@
                     // rock
                     if (b == "X")
                     {
-                        score += draw;
+                        score += Draw;
                     }
                     else if (b == "Y")
                     {
-                        score += win;
+                        score += Win;
                     }
                     else if (b == "Z")
                     {
-                        score += lose;
+                        score += Lose;
                     }
                 } else if (a == "B")
                 {
                     // paper
                     if (b == "X")
                     {
-                        score += lose;
+                        score += Lose;
                     }
                     else if (b == "Y")
                     {
-                        score += draw;
+                        score += Draw;
                     }
                     else if (b == "Z")
                     {
-                        score += win;
+                        score += Win;
                     }
                 } else if (a == "C")
                 {
                     // Scissors
                     if (b == "X")
                     {
-                        score += win;
+                        score += Win;
                     }
                     else if (b == "Y")
                     {
-                        score += lose;
+                        score += Lose;
                     }
                     else if (b == "Z")
                     {
-                        score += draw;
+                        score += Draw;
                     }
                 }
 
@@ -89,9 +91,9 @@
             {
                 long score = b switch
                 {
-                    "X" => lose,
-                    "Y" => draw,
-                    "Z" => win,
+                    "X" => Lose,
+                    "Y" => Draw,
+                    "Z" => Win,
                     _ => throw new ArgumentException("Invalid input", a)
                 };
                 

@@ -19,7 +19,7 @@ namespace AoC22
                 foreach (var line in input.Split(Environment.NewLine))
                 {
                     var matches = new Regex(@"^move (\d+) from (\d+) to (\d+)$").Matches(line);
-                    matches.Cast<Match>().ToList().ForEach(m => moves.Add(new Move
+                    matches.ToList().ForEach(m => moves.Add(new Move
                     {
                         Number = int.Parse(m.Groups[1].Value),
                         From = int.Parse(m.Groups[2].Value),

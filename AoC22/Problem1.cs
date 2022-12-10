@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace AoC22
+﻿namespace AoC22
 {
     namespace Problem1
     {
