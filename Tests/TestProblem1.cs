@@ -1,7 +1,6 @@
-﻿using System.Runtime.InteropServices;
+﻿using AoC22.Problem1;
 
 namespace Tests;
-using AoC22.Problem1;
 
 public class TestProblem1
 {
