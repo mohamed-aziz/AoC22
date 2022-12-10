@@ -130,6 +130,25 @@ namespace AoC22
 
                 return dirSize;
             }
+
+            private int FindSmallestDelete(TreeNode node, int requiredSpace)
+            {
+                var dirSize = Int32.MaxValue;
+                if (node.Value >= requiredSpace)
+                {
+                    dirSize = node.Value;
+                }
+                
+                foreach (var childNode in node.Children)
+                {
+                    if (childNode.Type == EntryType.Folder)
+                    {
+                        dirSize = Math.Min(dirSize, FindSmallestDelete(childNode, requiredSpace));
+                    }
+                }
+
+                return dirSize;
+            }
             
             public long Solve(string input)
             {
@@ -141,7 +160,11 @@ namespace AoC22
 
             public long Solve2(string input)
             {
-                throw new NotImplementedException();
+                var tree = TreeFactory.CreateTree(input);
+                UpdateTreeWeights(tree.Root);
+
+                var requiredSpace = 30000000 - (70000000 - tree.Root.Value);
+                return FindSmallestDelete(tree.Root, requiredSpace);
             }
         }        
     }
