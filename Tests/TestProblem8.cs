@@ -31,4 +31,24 @@ public class TestProblem8
         var result = _problem.Solve(input);
         Assert.That(result, Is.EqualTo(1698));
     }
+    
+    [Test]
+    public void TestPart2()
+    {
+        var input = @"30373
+25512
+65332
+33549
+35390";
+        var result = _problem.Solve2(input);
+        Assert.That(result, Is.EqualTo(8));
+    }
+    
+    [Test]
+    public void SolvePart2()
+    {
+        var input = File.ReadAllText(@"Inputs\\day8.txt");
+        var result = _problem.Solve2(input);
+        Assert.That(result, Is.EqualTo(672280));
+    }
 }
