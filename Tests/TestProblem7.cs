@@ -48,6 +48,6 @@ $ ls
     {
         var input = File.ReadAllText(@"Inputs\\day7.txt");
         var result = _problem.Solve(input);
-        Assert.That(result, Is.EqualTo(95437));
+        Assert.That(result, Is.EqualTo(1297683));
     }
 }
